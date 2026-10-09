@@ -268,4 +268,16 @@ async function results(page) {
   };
 }
 
+document.querySelectorAll('[data-role-pick]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const roleSelect = document.querySelector(
+      '#loginForm select[name="role"]'
+    );
+    if (roleSelect) {
+      roleSelect.value = button.dataset.rolePick;
+    }
+  });
+});
+
+
 show();
