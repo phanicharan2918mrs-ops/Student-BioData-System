@@ -71,3 +71,508 @@ dialog .fields { display: grid; gap: .65rem; }
 dialog .row { display: flex; justify-content: flex-end; gap: .5rem; margin-top: .75rem; }
 
 .toast { position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: .6rem 1rem; border-radius: 8px; z-index: 20; }
+
+/* ===== Modern campus login landing page ===== */
+#loginView.login-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px clamp(18px, 4vw, 64px);
+  color: #f8fafc;
+  background:
+    linear-gradient(110deg, rgba(3, 13, 37, .94), rgba(7, 23, 56, .62) 55%, rgba(18, 23, 59, .35)),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2400&q=85")
+    center / cover fixed;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#loginView.login-landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(37, 99, 235, .24), transparent 32%),
+    radial-gradient(circle at 90% 90%, rgba(124, 58, 237, .2), transparent 35%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.landing-header,
+.landing-main,
+.landing-footer {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+}
+
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 4px 0 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  font-weight: 750;
+  letter-spacing: -.04em;
+}
+
+.brand b,
+.login-card h1 span {
+  color: #818cf8;
+}
+
+.cap-logo {
+  font-size: 2.4rem;
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, .45));
+}
+
+.landing-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2.5vw, 34px);
+}
+
+.landing-nav a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 550;
+  transition: color .2s ease;
+}
+
+.landing-nav a:hover {
+  color: #93c5fd;
+}
+
+.landing-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(400px, .98fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  padding-block: 12px 32px;
+}
+
+.hero {
+  max-width: 650px;
+  padding: 24px 0;
+}
+
+.eyebrow {
+  color: #60c5ff;
+  font-weight: 800;
+  letter-spacing: .32em;
+  font-size: .9rem;
+}
+
+.hero h2 {
+  max-width: 650px;
+  margin: 14px 0 20px;
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+
+.hero h2 span {
+  display: block;
+  color: #60a5fa;
+  background: linear-gradient(90deg, #38bdf8, #818cf8 65%, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  max-width: 540px;
+  color: #d4e2f8;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  background: rgba(15, 23, 42, .65);
+}
+
+.student-icon {
+  color: #a5b4fc;
+  border: 1px solid #6366f1;
+  box-shadow: inset 0 0 22px rgba(99, 102, 241, .18);
+}
+
+.academic-icon {
+  color: #5eead4;
+  border: 1px solid #14b8a6;
+  box-shadow: inset 0 0 22px rgba(20, 184, 166, .15);
+}
+
+.secure-icon {
+  color: #fbbf24;
+  border: 1px solid #f59e0b;
+  box-shadow: inset 0 0 22px rgba(245, 158, 11, .15);
+}
+
+.feature h3 {
+  color: #fff;
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.feature p {
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+  font-size: .9rem;
+}
+
+/* Glass login panel */
+#loginView .glass-card {
+  width: 100%;
+  max-width: 620px;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 3.5vw, 48px);
+  color: #f8fafc;
+  background: linear-gradient(
+    145deg,
+    rgba(20, 38, 75, .82),
+    rgba(9, 17, 39, .88)
+  );
+  border: 1px solid rgba(191, 219, 254, .58);
+  border-radius: 30px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .42);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  animation: login-appear .65s ease both;
+}
+
+.login-emblem {
+  text-align: center;
+  font-size: 3.7rem;
+  line-height: 1.15;
+  filter: drop-shadow(0 8px 18px rgba(59, 130, 246, .35));
+}
+
+#loginView .login-card h1 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -.04em;
+}
+
+.login-subtitle {
+  text-align: center;
+  margin: -5px 0 12px;
+  color: #c7d8f5;
+  font-size: 1.05rem;
+}
+
+#loginView .login-field {
+  display: grid;
+  gap: 8px;
+  color: #dbeafe;
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+#loginView .login-field > span {
+  display: block;
+}
+
+#loginView .login-field input,
+#loginView .login-field select {
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 16px;
+  border: 1px solid rgba(147, 197, 253, .35);
+  border-radius: 14px;
+  background: rgba(148, 163, 184, .12);
+  color: #fff;
+  font-size: 1rem;
+}
+
+#loginView .login-field input::placeholder {
+  color: #a8bddb;
+}
+
+#loginView .login-field select option {
+  color: #111827;
+  background: #fff;
+}
+
+#loginView .login-field input:focus,
+#loginView .login-field select:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, .18);
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #bfdbfe;
+  font-size: .85rem;
+}
+
+.role-hint {
+  text-align: right;
+  color: #93c5fd;
+}
+
+#loginView .login-card .err {
+  margin: 0;
+  color: #fca5a5;
+}
+
+#loginView .login-submit {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(100deg, #0ea5e9, #4f65f5 55%, #9333ea);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, .22);
+  font-size: 1.1rem;
+  font-weight: 750;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+#loginView .login-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+#loginView .login-submit:disabled {
+  opacity: .65;
+  transform: none;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #bfdbfe;
+  text-align: center;
+  font-size: .85rem;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(191, 219, 254, .35);
+}
+
+.role-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#loginView .role-choice {
+  padding: 12px 5px;
+  border-radius: 13px;
+  background: rgba(15, 23, 42, .55);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+#loginView .role-student {
+  color: #60a5fa;
+  border-color: #2563eb;
+}
+
+#loginView .role-teacher {
+  color: #5eead4;
+  border-color: #0d9488;
+}
+
+#loginView .role-admin {
+  color: #fbbf24;
+  border-color: #d97706;
+}
+
+#loginView .role-choice:hover {
+  background: rgba(59, 130, 246, .15);
+}
+
+.login-quote {
+  margin: 10px 0 0;
+  text-align: center;
+  color: #c7d8f5;
+  font-size: .92rem;
+  font-style: italic;
+}
+
+#loginView .demo {
+  margin-top: 4px;
+  color: #cbd5e1;
+  font-size: .85rem;
+}
+
+#loginView .demo summary {
+  cursor: pointer;
+}
+
+.demo-table-wrap {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+#loginView .demo table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#loginView .demo td {
+  padding: 7px 5px;
+  border-bottom: 1px solid rgba(148, 163, 184, .18);
+  white-space: nowrap;
+}
+
+.landing-footer {
+  padding: 14px 0 0;
+  color: #b6c8e4;
+  text-align: center;
+  font-size: .8rem;
+}
+
+@keyframes login-appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  #loginView.login-landing {
+    background-attachment: scroll;
+  }
+
+  .landing-main {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 10px 0;
+  }
+
+  .hero h2 {
+    font-size: clamp(2.3rem, 8vw, 3.6rem);
+  }
+
+  #loginView .glass-card {
+    justify-self: stretch;
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  #loginView.login-landing {
+    padding: 16px;
+  }
+
+  .landing-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    font-size: 1.15rem;
+  }
+
+  .cap-logo {
+    font-size: 1.9rem;
+  }
+
+  .landing-nav {
+    gap: 18px;
+    font-size: .88rem;
+  }
+
+  .hero h2 {
+    font-size: 2.45rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .feature-list {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+  }
+
+  .feature h3 {
+    font-size: .9rem;
+  }
+
+  .feature p {
+    font-size: .78rem;
+  }
+
+  #loginView .glass-card {
+    padding: 23px 18px;
+    border-radius: 22px;
+  }
+
+  .login-emblem {
+    font-size: 2.8rem;
+  }
+
+  .role-shortcuts {
+    gap: 6px;
+  }
+
+  #loginView .role-choice {
+    font-size: .78rem;
+    padding: 11px 3px;
+  }
+
+  .login-options {
+    font-size: .76rem;
+  }
+}
+
