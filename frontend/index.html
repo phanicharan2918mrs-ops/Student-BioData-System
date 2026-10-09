@@ -1,36 +1,123 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07152f">
   <title>Student Bio-Data System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Login -->
-  <main id="loginView" class="login hidden">
-    <form id="loginForm" class="card login-card">
-      <h1>Student Bio-Data System</h1>
-      <p class="muted">Sign in to continue</p>
-      <label>Email<input name="email" type="email" autocomplete="username" required></label>
-      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
-      <label>Role
-        <select name="role"><option>Admin</option><option>Teacher</option><option selected>Student</option></select>
-      </label>
-      <p class="err" id="loginErr"></p>
-      <button class="primary" type="submit">Login</button>
-      <details class="demo">
-        <summary>Demo accounts</summary>
-        <table>
-          <tr><td>Admin</td><td>admin@example.com</td><td>admin123</td></tr>
-          <tr><td>Teacher</td><td>tom@faculty.edu</td><td>teach123</td></tr>
-          <tr><td>Student</td><td>sara@student.edu</td><td>pass123</td></tr>
-        </table>
-      </details>
-    </form>
+  <!-- Login landing page -->
+  <main id="loginView" class="login login-landing hidden">
+    <header class="landing-header">
+      <a class="brand" href="#" aria-label="Student Bio-Data System home">
+        <span class="cap-logo">🎓</span>
+        <span>Student Bio-Data <b>System</b></span>
+      </a>
+      <nav class="landing-nav" aria-label="Main navigation">
+        <a href="#welcome">⌂ Home</a>
+        <a href="#features">ⓘ About</a>
+        <a href="#contact">☎ Contact</a>
+      </nav>
+    </header>
+
+    <div class="landing-main">
+      <section class="hero" id="welcome">
+        <p class="eyebrow">WELCOME TO</p>
+        <h2>Manage <span>Student Records</span> Smartly</h2>
+        <p class="hero-description">
+          A modern and secure platform to manage students,
+          teachers and academic records effectively.
+        </p>
+
+        <div class="feature-list" id="features">
+          <article class="feature">
+            <div class="feature-icon student-icon">♟</div>
+            <h3>Students</h3>
+            <p>Manage profiles efficiently</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon academic-icon">▤</div>
+            <h3>Academic</h3>
+            <p>Track results and performance</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon secure-icon">⬡</div>
+            <h3>Secure</h3>
+            <p>Role-based access control</p>
+          </article>
+        </div>
+      </section>
+
+      <form id="loginForm" class="card login-card glass-card">
+        <div class="login-emblem">🎓</div>
+        <h1>Student Bio-Data <span>System</span></h1>
+        <p class="login-subtitle">Login to your account</p>
+
+        <label class="login-field">
+          <span>✉ &nbsp; Email</span>
+          <input name="email" type="email" placeholder="Enter your email"
+                 autocomplete="username" required>
+        </label>
+
+        <label class="login-field">
+          <span>♙ &nbsp; Password</span>
+          <input name="password" type="password" placeholder="Enter your password"
+                 autocomplete="current-password" required>
+        </label>
+
+        <label class="login-field">
+          <span>♧ &nbsp; Role</span>
+          <select name="role">
+            <option>Admin</option>
+            <option>Teacher</option>
+            <option selected>Student</option>
+          </select>
+        </label>
+
+        <div class="login-options">
+          <span>Secure sign in</span>
+          <span class="role-hint">Choose your role above</span>
+        </div>
+
+        <p class="err" id="loginErr" role="alert"></p>
+        <button class="primary login-submit" type="submit">
+          Login <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="or-divider"><span>or choose a role</span></div>
+        <div class="role-shortcuts">
+          <button type="button" class="role-choice role-student"
+                  data-role-pick="Student">♟ Student</button>
+          <button type="button" class="role-choice role-teacher"
+                  data-role-pick="Teacher">🎓 Teacher</button>
+          <button type="button" class="role-choice role-admin"
+                  data-role-pick="Admin">⚙ Admin</button>
+        </div>
+
+        <p class="login-quote">“Education today for a better tomorrow”</p>
+
+        <details class="demo">
+          <summary>Demo accounts</summary>
+          <div class="demo-table-wrap">
+            <table>
+              <tr><td>Admin</td><td>admin@example.com</td><td>admin123</td></tr>
+              <tr><td>Teacher</td><td>tom@faculty.edu</td><td>teach123</td></tr>
+              <tr><td>Student</td><td>sara@student.edu</td><td>pass123</td></tr>
+            </table>
+          </div>
+        </details>
+      </form>
+    </div>
+
+    <footer class="landing-footer" id="contact">
+      Student Bio-Data System · Secure academic record management
+    </footer>
   </main>
 
-  <!-- App -->
+  <!-- Existing application: keep this section -->
   <div id="appView" class="hidden">
     <header class="topbar">
       <strong>Student Bio-Data System</strong>
