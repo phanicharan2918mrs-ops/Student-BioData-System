@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Bio-Data System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login -->
+  <main id="loginView" class="login hidden">
+    <form id="loginForm" class="card login-card">
+      <h1>Student Bio-Data System</h1>
+      <p class="muted">Sign in to continue</p>
+      <label>Email<input name="email" type="email" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <label>Role
+        <select name="role"><option>Admin</option><option>Teacher</option><option selected>Student</option></select>
+      </label>
+      <p class="err" id="loginErr"></p>
+      <button class="primary" type="submit">Login</button>
+      <details class="demo">
+        <summary>Demo accounts</summary>
+        <table>
+          <tr><td>Admin</td><td>admin@example.com</td><td>admin123</td></tr>
+          <tr><td>Teacher</td><td>tom@faculty.edu</td><td>teach123</td></tr>
+          <tr><td>Student</td><td>sara@student.edu</td><td>pass123</td></tr>
+        </table>
+      </details>
+    </form>
+  </main>
+
+  <!-- App -->
+  <div id="appView" class="hidden">
+    <header class="topbar">
+      <strong>Student Bio-Data System</strong>
+      <nav id="tabs"></nav>
+      <div class="right">
+        <span id="who" class="muted"></span>
+        <button class="ghost" id="themeBtn" title="Toggle dark mode">Theme</button>
+        <button class="ghost" id="logoutBtn">Logout</button>
+      </div>
+    </header>
+    <main id="page" class="page"></main>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
