@@ -2,7 +2,7 @@
 
 A full-stack web application for managing student records and exam results, with role-based access for **Admin**, **Teacher** and **Student**. It is the web upgrade of our Java Swing desktop project.
 
-**Live demo:** `<paste your Render URL here>`
+**Live demo:** https://student-biodata-system.onrender.com/
 
 ## Demo accounts
 
